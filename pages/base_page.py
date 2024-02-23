@@ -28,6 +28,11 @@ class BasePage:
         from selenium.webdriver.support.select import Select
         select = Select(self.wait_for_element(locator))
         select.select_by_visible_text(option_text)
+    def select_drop_option_by_index(self, locator, index):
+        from selenium.webdriver.support.select import Select
+        select= Select(self.wait_for_element(locator))
+        select.select_by_index(index)
+
 
     def get_text(self, locator):
         return self.wait_for_element(locator).text
