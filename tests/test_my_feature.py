@@ -47,7 +47,10 @@ def test_navigation_to_setup_page(setup):
     base_page.click_element((By.LINK_TEXT, "Setup"))
 
     # Verify that the Setup page is loaded
-    assert "Setup" in driver.title
+
+
+    assert driver.title in "Setup"
+
 
     # Assert the presence of elements on the Setup page
     assert base_page.is_element_present((By.LINK_TEXT, "Brand"))
@@ -76,4 +79,6 @@ def test_clear_button_functionality(setup):
     assert base_page.get_text((By.ID, "expenseDate")) == ""
     assert base_page.get_text((By.ID, "quantity")) == ""
     assert base_page.get_text((By.ID, "expenseAmount")) == ""
-    assert base_page.get_text((By.ID, "expenseDescription")) == ""
+    assert base_page.get_text((By.ID, "expenseDescription")) == ""\
+
+
